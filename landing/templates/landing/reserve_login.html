@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Acceso Reservas - Hotel Genérico{% endblock %}
+
+{% block content %}
+<section class="section" style="padding:4rem 0">
+  <div class="container" style="max-width:720px">
+    <div style="background:white;padding:2rem;border-radius:12px;box-shadow:0 12px 30px rgba(2,6,23,.08)">
+      <a class="back-btn" id="reserve-back" href="/" title="Volver" style="display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1rem;text-decoration:none;color:var(--blue-700)">← Volver</a>
+      <h2>Área de Reservas</h2>
+      <p>Inicia sesión para gestionar o confirmar tu reserva.</p>
+
+      <form id="reserve-login-form" style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;align-items:center">
+        <input id="reserve-username" name="username" placeholder="Usuario" required style="flex:1;min-width:180px;padding:.6rem;border-radius:8px;border:1px solid rgba(0,0,0,.08)">
+        <div style="position:relative;flex:1;min-width:180px">
+          <input id="reserve-password" name="password" placeholder="Contraseña" type="password" required style="width:100%;padding:.6rem;border-radius:8px;border:1px solid rgba(0,0,0,.08)">
+          <button type="button" id="toggle-password" aria-label="Mostrar contraseña" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:transparent;border:none;color:var(--blue-700);font-weight:600;cursor:pointer">Mostrar</button>
+        </div>
+        <button id="reserve-submit" class="btn primary" type="submit" style="padding:.6rem 1rem">Entrar</button>
+      </form>
+      <div id="reserve-login-msg" class="login-msg" style="margin-top:.6rem"></div>
+    </div>
+  </div>
+</section>
+{% endblock %}

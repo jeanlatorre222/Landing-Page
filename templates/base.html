@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Hotel Genérico{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/landing/css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="brand">Hotel Genérico</h1>
+        <nav class="nav">
+          <a href="/reserve/login/">Reservas</a>
+          <a href="/#rooms">Habitaciones</a>
+          <a href="/#services">Servicios</a>
+          <a href="/#contact">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">© Hotel Genérico</div>
+    </footer>
+
+    <script src="/static/landing/js/main.js"></script>
+  </body>
+</html>

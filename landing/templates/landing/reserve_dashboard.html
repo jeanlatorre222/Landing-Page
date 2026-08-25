@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Mi Reserva - Hotel Genérico{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container" style="max-width:720px">
+    <div style="background:white;padding:2rem;border-radius:12px;box-shadow:0 12px 30px rgba(2,6,23,.08)">
+      <h2>Panel de Reservas</h2>
+      <p>Bienvenido, <strong>{{ user.username }}</strong>.</p>
+      <p>Habitación seleccionada: <strong id="current-room">{{ selected_room|default:"(ninguna)" }}</strong></p>
+      <div style="margin-top:1rem">
+        <label for="edit-room">Cambiar habitación:</label>
+        <select id="edit-room" style="margin-left:.5rem;padding:.4rem;border-radius:6px">
+          <option value="Estándar">Estándar</option>
+          <option value="Suite">Suite</option>
+          <option value="Familiar">Familiar</option>
+        </select>
+        <button id="save-room" class="btn" style="margin-left:.6rem">Guardar</button>
+      </div>
+
+      <hr style="margin:1.2rem 0">
+      <h3>Añadir opinión</h3>
+      <form id="review-form" style="display:flex;flex-direction:column;gap:.5rem">
+        <label for="review-room">Habitación (opcional)</label>
+        <select id="review-room" style="padding:.4rem;border-radius:6px;max-width:260px">
+          <option value="">(General)</option>
+          <option value="Estándar">Estándar</option>
+          <option value="Suite">Suite</option>
+          <option value="Familiar">Familiar</option>
+        </select>
+        <textarea id="review-text" rows="4" placeholder="Escribe tu opinión aquí" style="padding:.7rem;border-radius:8px"></textarea>
+        <div>
+          <button id="submit-review" class="btn primary">Enviar opinión</button>
+          <span id="review-msg" style="margin-left:1rem;color:#dc2626"></span>
+        </div>
+      </form>
+
+      <hr style="margin:1.2rem 0">
+      <h3>Opiniones recientes</h3>
+      <div id="reviews-list">
+        {% for r in user.review_set.all|slice:":5" %}
+          <blockquote style="background:#f7fdfd;padding:1rem;border-radius:8px">{{ r.text }}<br><small>— {{ r.name }} ({{ r.room_type }})</small></blockquote>
+        {% empty %}
+          <p>No hay opiniones todavía.</p>
+        {% endfor %}
+      </div>
+
+      <p style="margin-top:1rem">Desde aquí podrás confirmar o modificar tu reserva (funcionalidad futura).</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

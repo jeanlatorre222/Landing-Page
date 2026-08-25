@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %}Bienvenido - Hotel Genérico{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-bg">
+    <svg class="wave" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 C300,80 900,0 1200,60 L1200,120 L0,120 Z" fill="#e0fbff"></path>
+    </svg>
+  </div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <h2>Hotel Genérico — Tu refugio junto al mar</h2>
+      <div class="hero-copy">
+        <p class="lead">Confort moderno, ubicación céntrica y atención 24/7. Habitaciones para parejas, familias y viajes de trabajo con desayuno incluido y Wi‑Fi gratuito.</p>
+      </div>
+      <div class="hero-cta">
+        <a class="btn primary" href="/reserve/login/">Iniciar sesión</a>
+        <a class="btn ghost" href="/#rooms">Ver habitaciones</a>
+      </div>
+
+      <!-- login removed from homepage (reservas tiene su propio acceso) -->
+    </div>
+    <div class="hero-illustration" aria-hidden="true">
+      <div class="beach-card" role="img" aria-label="Ilustración playa"></div>
+    </div>
+  </div>
+</section>
+
+<section id="rooms" class="section">
+  <div class="container">
+    <h3>Nuestras Habitaciones</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>Habitación Estándar</h4>
+        <p>Comodidad básica para estancias cortas.</p>
+        <button class="select-room-btn" data-room="Estándar">Seleccionar</button>
+      </div>
+      <div class="card">
+        <h4>Suite</h4>
+        <p>Espacio y lujo para una estancia inolvidable.</p>
+        <button class="select-room-btn" data-room="Suite">Seleccionar</button>
+      </div>
+      <div class="card">
+        <h4>Familiar</h4>
+        <p>Espacio para toda la familia.</p>
+        <button class="select-room-btn" data-room="Familiar">Seleccionar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="section alt">
+  <div class="container">
+    <h3>Lo que nos hace especiales</h3>
+    <div class="features">
+      <div class="feature">
+        <h4>Ubicación</h4>
+        <p>A pasos de la playa y cerca de atracciones locales.</p>
+      </div>
+      <div class="feature">
+        <h4>Servicio 24/7</h4>
+        <p>Equipo atento para lo que necesites, día y noche.</p>
+      </div>
+      <div class="feature">
+        <h4>Desayuno incluido</h4>
+        <p>Desayuno continental con opciones locales frescas.</p>
+      </div>
+      <div class="feature">
+        <h4>Wi‑Fi y Negocios</h4>
+        <p>Conexión rápida y espacios para teletrabajar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="section">
+  <div class="container">
+    <h3>Opiniones</h3>
+    <div class="reviews">
+      <blockquote>"Excelente ubicación y personal muy amable." — María</blockquote>
+      <blockquote>"Habitación limpia y cómoda, volveremos." — Carlos</blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="section alt">
+  <div class="container">
+    <h3>Galería</h3>
+    <div class="gallery">
+      <div class="thumb"><img src="/static/1.jpg" alt="Galería 1"></div>
+      <div class="thumb"><img src="/static/2.jpg" alt="Galería 2"></div>
+      <div class="thumb"><img src="/static/3.jpg" alt="Galería 3"></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section alt">
+  <div class="container">
+    <h3>Servicios</h3>
+    <ul>
+      <li>Desayuno incluido</li>
+      <li>Piscina</li>
+      <li>Wi‑Fi gratuito</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container">
+    <h3>Contacto y Reservas</h3>
+    <p>Escríbenos a <strong>reservas@hotelgenerico.example</strong></p>
+  </div>
+</section>
+
+{% endblock %}
